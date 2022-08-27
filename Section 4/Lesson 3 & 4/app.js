@@ -37,3 +37,5 @@ yargs.command({
         console.log('Body: ' + argv.body)
     }
 })
+
+console.log(yargs.argv)
