@@ -43,6 +43,7 @@
 
 /**
  * Lesson 8
+ * callback function
  */
 // const geocode = (address, callback) => {
 //     setTimeout(() => {
@@ -70,29 +71,29 @@
  * Lesson 11
  */
 // Other lines hidden for brevity
-geocode(address, (error, data) => {
-    if (error) {
-        return console.log(error)
-    }
-    forecast(data.latitude, data.longitude, (error, forecastData) => {
-        if (error) {
-            return console.log(error)
-        }
-        console.log(data.location)
-        console.log(forecastData)
-    })
-})
+// geocode(address, (error, data) => {
+//     if (error) {
+//         return console.log(error)
+//     }
+//     forecast(data.latitude, data.longitude, (error, forecastData) => {
+//         if (error) {
+//             return console.log(error)
+//         }
+//         console.log(data.location)
+//         console.log(forecastData)
+//     })
+// })
 
 
 /**
  * mencoba dengan API lain
  */
-// const request = require('request')
-// const i = 0
-// const url =
-//     'https://staging-api-forum-app-laravel.herokuapp.com/api/forums'
-// request({ url: url, json: true }, (error, response) => {
-//     response.body.data.forEach(element => {
-//         console.log(element.title + " Forum nya ini ya")
-//     });
-// })
+const request = require('request')
+const i = 0
+const url =
+    'https://staging-api-forum-app-laravel.herokuapp.com/api/forums'
+request({ url: url, json: true }, (error, response) => {
+    response.body.data.forEach(element => {
+        console.log(`${element.title} | Forum ke ${i}`)
+    });
+})
